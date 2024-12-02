@@ -33,7 +33,6 @@
     ;; layer. So it is easier for users to steal the ownership of the
     ;; `org' package.
     (default-org-config :location built-in)
-    (org-recur :location elpa)
     org-superstar
     (space-doc :location (recipe :fetcher local))
     toc-org
@@ -76,10 +75,4 @@
 (defun spacemacs-org/init-space-doc ()
   (add-hook 'org-mode-hook 'dotspacemacs//prettify-spacemacs-docs))
 
-(defun spacemacs-org/init-org-recur ()
-  (use-package org-recur
-    :defer t
-    :hook ((org-mode . org-recur-mode)
-           (org-agenda-mode . org-recur-agenda-mode)))
-  )
 ;;; packages.el ends here

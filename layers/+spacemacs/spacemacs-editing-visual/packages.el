@@ -26,6 +26,7 @@
 
 (defconst spacemacs-editing-visual-packages
   '(
+    adaptive-wrap
     column-enforce-mode
     (hide-comnt :location (recipe :fetcher github :repo "emacsmirror/hide-comnt"))
     highlight-indentation
@@ -37,6 +38,12 @@
     volatile-highlights
     writeroom-mode))
 
+(defun spacemacs-editing-visual/init-adaptive-wrap ()
+  (use-package adaptive-wrap
+    :config
+    (progn
+      (add-hook 'visual-line-mode-hook 'adaptive-wrap-prefix-mode))))
+
 
 (defun spacemacs-editing-visual/init-column-enforce-mode ()
   (use-package column-enforce-mode
